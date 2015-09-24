@@ -69,3 +69,4 @@ Options are defined in [PayLane form implementation guide](http://devzone.paylan
 * [ ] Ask for name, email and phone number before redirecting to PayLane.
 * [ ] Return values from all helpers.
 * [ ] Move description generation to server, add template to settings and mix it with data when invoked.
+* [ ] Validation hash method.
