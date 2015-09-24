@@ -19,9 +19,9 @@ This package requires certain settings to be provided in `paylane` property:
 * `language` — default language of PayLane checkout form.
 * `backUrl` — callback URL PayLane will redirect to after successful checkout.
 * `form` — form settings:
-** `name` — text input field label and placeholder for full name of the customer.
-** `phone` — text input field label and placeholder for phone number of the customer.
-** `email` — text input field label and placeholder for email of the customer.
+    * `name` — text input field label and placeholder for full name of the customer.
+    * `phone` — text input field label and placeholder for phone number of the customer.
+    * `email` — text input field label and placeholder for email of the customer.
 
 Example `settings.json`:
 
