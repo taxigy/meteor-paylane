@@ -9,13 +9,22 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.3');
     api.use('http');
-    api.addFiles('paylane-client.js', ['client']);
-    api.addFiles('paylane-server.js', ['server']);
+    api.use('jparker:crypto-sha1', 'server');
+    api.use('simple:reactive-method', 'client');
+    api.addFiles('paylane-server.js', 'server');
+    api.addFiles([
+        'paylane-client.js',
+        'paylane-form.html'
+    ], 'client');
 });
 
 Package.onTest(function(api) {
     api.use('tinytest');
     api.use('http');
+    api.use([
+        'jparker:crypto-sha1',
+        'simple:reactive-method'
+    ]);
     api.use('taxigy:paylane');
     api.addFiles('paylane-tests.js');
 });
