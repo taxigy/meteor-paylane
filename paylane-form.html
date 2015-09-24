@@ -1,16 +1,47 @@
 <template name="paylaneCheckout">
   <form
     method="POST"
-    action="https://secure.paylane.com/order/cart.html">
+    action="https://secure.paylane.com/order/cart.html"
+    class="form paylane-form">
     <input type="hidden" name="amount" value="{{amount}}">
     <input type="hidden" name="currency" value="{{currency}}">
-    <input type="hidden" name="merchant_id" value="{{merchantId}}">
+    <input type="hidden" name="merchant_id" value="{{merchant}}">
     <input type="hidden" name="description" value="{{description}}">
     <input type="hidden" name="transaction_description" value="{{transactionDescription}}">
     <input type="hidden" name="transaction_type" value="{{transactionType}}">
     <input type="hidden" name="back_url" value="{{backUrl}}">
     <input type="hidden" name="language" value="{{language}}">
     <input type="hidden" name="hash" value="{{hash}}">
-    <button type="submit">{{buttonText}}</button>
+    {{#if showField 'name'}}
+      <div class="form-group paylane-form-group">
+        <label for="name">{{label 'name'}}</label>
+        <input
+          type="text"
+          name="customer_name"
+          placeholder="{{label 'name'}}"
+          class="form-control paylane-form-control">
+      </div>
+    {{/if}}
+    {{#if showField 'phone'}}
+      <div class="form-group paylane-form-group">
+        <label for="name">{{label 'phone'}}</label>
+        <input
+          type="text"
+          name="customer_name"
+          placeholder="{{label 'phone'}}"
+          class="form-control paylane-form-control">
+      </div>
+    {{/if}}
+    {{#if showField 'email'}}
+      <div class="form-group paylane-form-group">
+        <label for="name">{{label 'email'}}</label>
+        <input
+          type="text"
+          name="customer_name"
+          placeholder="{{label 'email'}}"
+          class="form-control paylane-form-control">
+      </div>
+    {{/if}}
+    <button type="submit" class="btn btn-block paylane-btn">{{submit}}</button>
   </form>
 </template>
