@@ -30,9 +30,9 @@ Paylane.calculateHash = function (options) {
     text = [
         Meteor.settings.paylane.salt,
         options.status || '',
-        String(options.amount),
+        String(options.amount) || Meteor.settings.paylane.amount,
         String(options.description).replace(/[^a-zA-Z0-9]/gi, ''),
-        options.currency,
+        options.currency || Meteor.settings.paylane.currency,
         options.id_sale || options.id_authorization,
         options.transaction_type
     ].join('|').replace(/\|+/gi, '|').replace(/(^\|+|\|+$)/gi, '');
