@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'taxigy:paylane',
+    name: 'rishatmuhametshin:paylane',
     version: '0.0.1',
     summary: 'Implementation of PayLane REST API as a Meteor package.',
     git: 'https://github.com/taxigy/meteor-paylane',
@@ -9,8 +9,12 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.3');
     api.use('http');
-    api.use('jparker:crypto-sha1', 'server');
-    api.use('simple:reactive-method', 'client');
+    api.use('jparker:crypto-sha1@0.1.0', 'server');
+    api.use([
+        'templating',
+        'spacebars',
+        'simple:reactive-method@1.0.2'
+    ], 'client');
     api.addFiles('paylane-server.js', 'server');
     api.addFiles([
         'paylane-client.js',
@@ -25,7 +29,7 @@ Package.onTest(function(api) {
         'jparker:crypto-sha1',
         'simple:reactive-method'
     ]);
-    api.use('taxigy:paylane');
+    api.use('rishatmuhametshin:paylane');
     api.addFiles('paylane-tests.js');
 });
 

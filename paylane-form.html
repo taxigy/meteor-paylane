@@ -1,3 +1,16 @@
 <template name="paylaneCheckout">
-
+  <form
+    method="POST"
+    action="https://secure.paylane.com/order/cart.html">
+    <input type="hidden" name="amount" value="{{amount}}">
+    <input type="hidden" name="currency" value="{{currency}}">
+    <input type="hidden" name="merchant_id" value="{{merchantId}}">
+    <input type="hidden" name="description" value="{{description}}">
+    <input type="hidden" name="transaction_description" value="{{transactionDescription}}">
+    <input type="hidden" name="transaction_type" value="{{transactionType}}">
+    <input type="hidden" name="back_url" value="{{backUrl}}">
+    <input type="hidden" name="language" value="{{language}}">
+    <input type="hidden" name="hash" value="{{hash}}">
+    <button type="submit">{{buttonText}}</button>
+  </form>
 </template>
