@@ -17,8 +17,8 @@ Package.onUse(function(api) {
     ], 'client');
     api.addFiles('paylane-server.js', 'server');
     api.addFiles([
-        'paylane-client.js',
-        'paylane-form.html'
+        'paylane-form.html',
+        'paylane-client.js'
     ], 'client');
 });
 
