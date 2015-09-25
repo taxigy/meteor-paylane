@@ -1,6 +1,6 @@
 Package.describe({
     name: 'rishatmuhametshin:paylane',
-    version: '0.0.3_rc1',
+    version: '0.0.3_1',
     summary: 'Implementation of PayLane REST API as a Meteor package.',
     git: 'https://github.com/taxigy/meteor-paylane',
     documentation: 'README.md'
