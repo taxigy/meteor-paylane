@@ -58,16 +58,3 @@ Template.paylaneCheckout.helpers({
         return false;
     }
 });
-
-Template.paylaneCheckout.events({
-    'submit form': function (event, instance) {
-        // debug
-        console.log('this')
-        console.log(this)
-        console.log('event')
-        console.log(event)
-        console.log('instance')
-        console.log(instance)
-        event.preventDefault()
-    }
-});
