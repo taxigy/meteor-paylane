@@ -2,3 +2,5 @@
 .meteor/meteorite
 *.swp
 .versions
+Icon*
+
