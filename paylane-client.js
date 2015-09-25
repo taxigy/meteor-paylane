@@ -5,7 +5,7 @@ Template.paylaneCheckout.helpers({
     currency: function () {
         return this.currency || ReactiveMethod.call('getCurrency');
     },
-    merchantId: function () {
+    merchant: function () {
         return ReactiveMethod.call('getMerchant');
     },
     description: function () {
