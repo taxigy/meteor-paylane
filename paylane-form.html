@@ -48,6 +48,18 @@
           value="{{customerEmail}}">
       </div>
     {{/if}}
+    {{#each customFields}}
+      <div class="form-group paylane-form-group">
+        <label for="{{fieldName}}">{{fieldLabel}}</label>
+        <input
+          type="{{fieldType}}"
+          id="{{fieldName}}"
+          name="{{fieldName}}"
+          placeholder="{{fieldLabel}}"
+          class="form-control paylane-form-control"
+          value="{{fieldValue}}">
+      </div>
+    {{/each}}
     <button type="submit" id="checkout" class="btn btn-block paylane-btn">{{submit}}</button>
   </form>
 </template>

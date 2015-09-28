@@ -50,6 +50,9 @@ Template.paylaneCheckout.helpers({
     customerEmail: function () {
         return this.customerEmail || '';
     },
+    customFields: function () {
+        return this.customFields || [];
+    },
     submit: function () {
         return ReactiveMethod.call('getFormSubmit');
     },
