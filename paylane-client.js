@@ -41,6 +41,15 @@ Template.paylaneCheckout.helpers({
     label: function (fieldName) {
         return ReactiveMethod.call('getFormFieldLabel', fieldName);
     },
+    customerName: function () {
+        return this.customerName || '';
+    },
+    customerPhone: function () {
+        return this.customerPhone || '';
+    },
+    customerEmail: function () {
+        return this.customerEmail || '';
+    },
     submit: function () {
         return ReactiveMethod.call('getFormSubmit');
     },

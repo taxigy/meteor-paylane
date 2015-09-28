@@ -14,34 +14,40 @@
     <input type="hidden" name="hash" value="{{hash}}">
     {{#if showField 'name'}}
       <div class="form-group paylane-form-group">
-        <label for="name">{{label 'name'}}</label>
+        <label for="customer_name">{{label 'name'}}</label>
         <input
           type="text"
+          id="customer_name"
           name="customer_name"
           placeholder="{{label 'name'}}"
-          class="form-control paylane-form-control">
+          class="form-control paylane-form-control"
+          value="{{customerName}}">
       </div>
     {{/if}}
     {{#if showField 'phone'}}
       <div class="form-group paylane-form-group">
-        <label for="name">{{label 'phone'}}</label>
+        <label for="customer_phone">{{label 'phone'}}</label>
         <input
           type="text"
-          name="customer_name"
+          id="customer_phone"
+          name="customer_phone"
           placeholder="{{label 'phone'}}"
-          class="form-control paylane-form-control">
+          class="form-control paylane-form-control"
+          value="{{customerPhone}}">
       </div>
     {{/if}}
     {{#if showField 'email'}}
       <div class="form-group paylane-form-group">
-        <label for="name">{{label 'email'}}</label>
+        <label for="customer_email">{{label 'email'}}</label>
         <input
           type="text"
-          name="customer_name"
+          id="customer_email"
+          name="customer_email"
           placeholder="{{label 'email'}}"
-          class="form-control paylane-form-control">
+          class="form-control paylane-form-control"
+          value="{{customerEmail}}">
       </div>
     {{/if}}
-    <button type="submit" class="btn btn-block paylane-btn">{{submit}}</button>
+    <button type="submit" id="checkout" class="btn btn-block paylane-btn">{{submit}}</button>
   </form>
 </template>
