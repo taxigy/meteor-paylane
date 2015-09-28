@@ -26,8 +26,9 @@ Paylane.calculateSubmitHash = function (options) {
     return CryptoJS.SHA1(text).toString();
 };
 
-Paylane.calculateCallbackHash = function (hash, options) {
+Paylane.calculateCallbackHash = function (options) {
     var salt = Meteor.settings.paylane.salt;
+    var hash;
     var text;
     var id;
     var status;
@@ -35,27 +36,38 @@ Paylane.calculateCallbackHash = function (hash, options) {
     var amount;
     var currency;
 
-    if (!hash || !options) {
-        throw new Meteor.Error(400, 'Must provide both hash and options for the hash verification.');
+    if (!options || !options.hash) {
+        throw new Meteor.Error(400, 'Must provide options object that contains hash.');
     }
 
-    if (!(id = options.id_sale || options.id_authorization)) {
+    hash = options.hash;
+    id = options.id_sale || options.id_authorization;
+
+    if (!id) {
         throw new Meteor.Error(400, 'Expected either id_sale or id_authorization but both are nil.');
     }
 
-    if (!(status = options.status)) {
+    status = options.status;
+
+    if (!status) {
         throw new Meteor.Error(400, 'Expected status but it is nil.');
     }
 
-    if (!(description = options.description)) {
+    description = options.description;
+
+    if (!description) {
         throw new Meteor.Error(400, 'Expected description but it is nil.');
     }
 
-    if (!(amount = options.amount)) {
+    amount = options.amount;
+
+    if (!amount) {
         throw new Meteor.Error(400, 'Expected amount but it is nil.');
     }
 
-    if (!(currency = options.currency)) {
+    currency = options.currency;
+
+    if (!currency) {
         throw new Meteor.Error(400, 'Expected currency but it is nil.');
     }
 
@@ -68,7 +80,7 @@ Paylane.calculateCallbackHash = function (hash, options) {
         id
     ].join('|');
 
-    return CryptoJS.SHA1(text).toString() == hash;
+    return CryptoJS.SHA1(text).toString() === hash;
 };
 
 Meteor.methods({
@@ -100,8 +112,8 @@ Meteor.methods({
     calculateHash: function (options) {
         return Paylane.calculateSubmitHash(options);
     },
-    validateHash: function (hash, options) {
-        return Paylane.calculateCallbackHash(hash, options);
+    validateHash: function (options) {
+        return Paylane.calculateCallbackHash(options);
     }
 });
 
