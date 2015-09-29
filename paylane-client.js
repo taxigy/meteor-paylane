@@ -30,7 +30,7 @@ Template.paylaneCheckout.helpers({
         return this.transactionType || 'S';
     },
     backUrl: function () {
-        return ReactiveMethod.call('getBackUrl');
+        return this.backUrl || ReactiveMethod.call('getBackUrl');
     },
     language: function () {
         return this.language || ReactiveMethod.call('getLanguage');
