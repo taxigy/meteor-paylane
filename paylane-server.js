@@ -41,7 +41,7 @@ Paylane.calculateCallbackHash = function (options) {
     }
 
     hash = options.hash;
-    id = options.id_sale || options.id_authorization;
+    id = options.id_sale || options.id_authorization || '';
 
     if (!id) {
         throw new Meteor.Error(400, 'Expected either id_sale or id_authorization but both are nil.');
